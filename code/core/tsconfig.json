@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    // use ES2015 modules
+    "target": "ES6",
+    // compile to ES2015 (Babel will do the rest)
+    "allowSyntheticDefaultImports": true,
+    // see below
+    "baseUrl": "src",
+    // enables you to import relative to this folder
+    "lib": [
+      "ESNext",
+      "ES2015",
+      "DOM",
+      "ES2019"
+    ],
+    "sourceMap": true,
+    // make TypeScript generate sourcemaps
+    "outDir": "ts-build",
+    // output directory to build to (irrelevant because we use Webpack most of the time)
+    "jsx": "react",
+    // enable JSX mode, but "preserve" tells TypeScript to not transform it (we'll use Babel)
+    "strict": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "resolveJsonModule": true,
+    "preserveSymlinks": true,
+    "esModuleInterop": true,
+    "downlevelIteration": true
+  },
+  "exclude": [
+    "node_modules"
+    // don't run on any code in the node_modules directory
+  ],
+  "include": [
+    "src/**/*"
+    //    "node_modules/@project/**/*"
+  ]
+}

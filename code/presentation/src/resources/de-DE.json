@@ -1,0 +1,12 @@
+{
+  "application": {
+    "topic": "TooDoo"
+  },
+  "loading": {
+    "text": "lade..."
+  },
+  "todoList": {
+    "topic": "Deine Todos",
+    "createButtonText": "Hinzufügen"
+  }
+}

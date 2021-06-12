@@ -1,0 +1,44 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "exclude": [
+          "@babel/plugin-transform-regenerator"
+        ],
+        "loose": false
+      }
+    ],
+    "@babel/preset-react",
+    [
+      "minify",
+      {
+        "builtIns": false,
+        "evaluate": false,
+        "mangle": false
+      }
+    ],
+    [
+      "@babel/preset-typescript",
+      {
+        "isTSX": true,
+        "allExtensions": true
+      }
+    ]
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-function-bind",
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": false
+      }
+    ]
+  ]
+}

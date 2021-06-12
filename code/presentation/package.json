@@ -1,0 +1,22 @@
+{
+  "name": "@project/presentation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "generate-sources": "yarn run generate-sources:localization",
+    "generate-sources:localization": "node -r ts-node/register src/build/localization.build.ts",
+    "watch": "yarn run watch:localization",
+    "watch:localization": "nodemon --config src/build/localization.nodemon.json src/build/localization.build.ts"
+  },
+  "dependencies": {
+    "@trustedshops/etrusted-aaa-library-core": "^3.0.0-4",
+    "@trustedshops/etrusted-aaa-library-localization": "^0.1.0",
+    "@trustedshops/etrusted-widget-library-utils": "^3.0.0-0",
+    "@types/node": "^15.12.2",
+    "rxjs": "^7.1.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2",
+    "typescript-optional": "^2.0.1"
+  }
+}

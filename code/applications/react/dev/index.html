@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title><%= JSON.stringify(htmlWebpackPlugin.options.title) %></title>
+
+  <style>
+      .mock-bar {
+          margin-bottom: 10px;
+      }
+  </style>
+</head>
+
+<body>
+<div class="mock-bar">
+  <button onclick="toggleLocale()">Toggle locale</button>
+  <button onclick="toggleTheme()">Toggle theme</button>
+  <button onclick="setTheme()">Set theme</button>
+  <button onclick="registerNewTheme()">Register new theme</button>
+</div>
+<todo-app id="todo-app" theme="default" locale="en-GB" stage="local" class="" base-path="test/path"></todo-app>
+<script>
+  const element = document.getElementById('todo-app');
+  const locales = ['de-DE', 'en-GB'];
+  const themes = ['dark', 'default'];
+
+  function next(array) {
+    const element = array.shift();
+    array.push(element);
+    return element;
+  }
+
+  function toggleLocale() {
+    element.setAttribute('locale', next(locales));
+  }
+
+  function toggleTheme() {
+    element.setAttribute('theme', next(themes));
+  }
+
+  function setTheme(theme) {
+    element.setAttribute('theme', prompt('theme name'));
+  }
+
+  function registerNewTheme() {
+    const name = prompt('theme name');
+    const colorPair1Text = prompt('color pair 1 text');
+    const colorPair1Background = prompt('color pair 1 background');
+    const colorPair2Text = prompt('color pair 2 text');
+    const colorPair2Background = prompt('color pair 2 background');
+    window.dispatchEvent(new CustomEvent('com.benkeil.todo-app.RegisterThemeCommand', {
+      detail: {
+        name,
+        theme: {
+          color: {
+            pairs: {
+              /** app background, app text color */
+              1: {
+                text: colorPair1Text,
+                background: colorPair1Background,
+              },
+              /** button */
+              2: {
+                text: colorPair2Text,
+                background: colorPair2Background,
+              },
+            },
+          },
+        },
+      },
+    }));
+  }
+</script>
+</body>
+
+</html>

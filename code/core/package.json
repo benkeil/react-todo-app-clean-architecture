@@ -1,0 +1,12 @@
+{
+  "name": "@project/core",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@trustedshops/etrusted-aaa-library-core": "^3.0.0-4",
+    "@trustedshops/etrusted-widget-library-utils": "^3.0.0-0",
+    "rxjs": "^7.1.0",
+    "typescript-optional": "^2.0.1"
+  }
+}

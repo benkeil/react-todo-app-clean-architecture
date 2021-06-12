@@ -1,0 +1,12 @@
+{
+  "name": "@project/adapters",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "rxjs": "^7.1.0",
+    "@project/core": "link:../core",
+    "@project/presentation": "link:../presentation",
+    "typescript-optional": "^2.0.1"
+  }
+}
